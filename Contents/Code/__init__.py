@@ -9,6 +9,7 @@ spec'd from:
 CREDITS:
     Original code author: .......... Harley Hooligan
     Modified by: ................... Guillaume Boudreau
+    Modified by:                     Thomas Ries
     Eden and Frodo compatibility: .. Jorge Amigo
     Cleanup and some extensions: ... SlrG
     Multipart filter idea: ......... diamondsw
@@ -180,6 +181,7 @@ class XBMCNFO(PlexAgent):
                 except:
                     log.debug('No <sorttitle> tag in {nfo}.'.format(
                         nfo=nfo_file))
+                    media.title_sort = nfo_xml.xpath('title')[0].text
                     pass
                 # Year
                 try:
